@@ -1,0 +1,4 @@
+no Next.js, exibe duas formas de se declar css
+1º: É de forma normal name.scss, dessa forma o css sera disponibilizado de forma global
+2º: e a segunda é com modulos: name.module.scss, dessa forma esse css sera disponibilizado
+apenas para o component que importar este css
