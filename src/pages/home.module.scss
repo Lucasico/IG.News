@@ -4,7 +4,7 @@
   justify-content: space-between;
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0rem 2rem;
   //foi desta forma com o calc, para que eu pude-se fazer o calculo do -5rem, para que com
   //eu tenha a mesma distancia de espaçamento em cima e em baixo, descontando os -5rem do header do app
   //obs. o 100vh significa que é 100% da tela
@@ -45,7 +45,7 @@
     font-size: 4.5rem;
     //espaçamento entre as linhas
     line-height: 4.5rem;
-    font-weight: 900;
+    font-weight: 800;
     margin-top: 2.5rem;
     span {
       color: var(--cyan-500);
