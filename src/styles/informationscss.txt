@@ -1,4 +1,5 @@
-no Next.js, exibe duas formas de se declar css
-1º: É de forma normal name.scss, dessa forma o css sera disponibilizado de forma global
+no Next.js, exige duas formas de se declara css
+1º: É de forma normal name.scss, dessa forma o css sera disponibilizado de forma global,
+e so pode ser usado unicamente no arquivo _app.tsx
 2º: e a segunda é com modulos: name.module.scss, dessa forma esse css sera disponibilizado
 apenas para o component que importar este css

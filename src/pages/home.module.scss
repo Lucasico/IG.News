@@ -1,0 +1,68 @@
+.contentContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  //foi desta forma com o calc, para que eu pude-se fazer o calculo do -5rem, para que com
+  //eu tenha a mesma distancia de espaçamento em cima e em baixo, descontando os -5rem do header do app
+  //obs. o 100vh significa que é 100% da tela
+  height: calc(100vh - 5rem);
+
+  @media (max-width: 850px) {
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .contentContainer {
+      height: calc(100vh - 5rem);
+    }
+    img {
+      display: none;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    max-width: 100vh;
+  }
+}
+
+.hero {
+  max-width: 600px;
+
+  //pega unica e exclusivamente o span, que esta dentro do hero, ou seja seu filho e não seus spans netos
+  > span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+    //espaçamento entre as linhas
+    line-height: 4.5rem;
+    font-weight: 900;
+    margin-top: 2.5rem;
+    span {
+      color: var(--cyan-500);
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    margin-top: 1.5rem;
+    span {
+      color: var(--cyan-500);
+      font-weight: bold;
+    }
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}

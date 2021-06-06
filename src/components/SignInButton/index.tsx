@@ -8,7 +8,7 @@ export function SignInButton() {
     <button type="button" className={styles.signInButton}>
       <FaGithub color="#04d361" />
       User github logged
-      <FiX color="#737380" className={styles.closeIcon} />
+      <FiX color="#737380" />
     </button>
   ) : (
     <button type="button" className={styles.signInButton}>
