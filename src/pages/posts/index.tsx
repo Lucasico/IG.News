@@ -14,7 +14,7 @@ type Post = {
 };
 
 type PostProps = {
-    post: Post[];
+    posts: Post[];
 };
 
 export default function Posts({ posts }: PostProps) {
@@ -27,8 +27,8 @@ export default function Posts({ posts }: PostProps) {
             <main className={styles.container}>
                 <div className={styles.posts}>
                     {posts.map((post: Post) => (
-                        <Link href={`/posts/${post.slug}`}>
-                            <a key={post.slug}>
+                        <Link href={`/posts/${post.slug}`} key={post.slug}>
+                            <a>
                                 <time>{post.updateAt}</time>
                                 <strong>{post.title}</strong>
                                 <p>{post.excerpt}</p>

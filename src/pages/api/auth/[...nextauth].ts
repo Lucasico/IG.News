@@ -19,6 +19,52 @@ export default NextAuth({
 
   //functions que devem ser execultadas apos, login ou logout
   callbacks: {
+
+    //esse callback, vai me permitir inserir informações adicionais a sessão do usuario 
+    //logado
+    async session(session) {
+      try {
+
+        const userActiveSubscription = await fauna.query(
+          q.Get(
+            q.Intersection([
+              q.Match(
+                q.Index('subscription_by_user_ref'),
+                q.Select(
+                  "ref",
+                  q.Get(
+                    q.Match(
+                      q.Index('user_by_email'),
+                      q.Casefold(session.user.email)
+                    )
+                  )
+                )
+              ),
+              q.Match(
+                q.Index('subscription_by_status'),
+                "active"
+              )
+            ])
+          )
+        )
+
+        return {
+          ...session,
+          activeSubscription: userActiveSubscription
+        }
+      } catch {
+
+        return {
+          ...session,
+          activeSubscription: null
+        }
+
+      }
+
+
+    },
+
+    //após login faça isso
     async signIn(user, account, profile) {
       try {
         //saiba mais
