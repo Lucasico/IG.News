@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { useSession } from 'next-auth/client';
 import { getPrismicClient } from '../../../services/prismic';
 import { RichText } from 'prismic-dom';
@@ -21,6 +21,7 @@ export default function PostPreview({ post }: PreviewPostProps) {
     const router = useRouter();
 
     useEffect(() => {
+        console.log('chegou neste effect');
         if (session?.activeSubscription) {
             router.push(`/posts/${post.slug}`);
         }

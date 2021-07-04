@@ -36,7 +36,8 @@ export default function Post({ post }: PostProps) {
 
 /**
  * Toda pagina gerada de forma estatica
- * é uma uma pagina não protegida, ou seja não pode ser getStaticProps
+ * é uma uma pagina não protegida, ou seja não pode ser getStaticProps. Assim sendo,
+ * está pagina não pode ser de jeito nenhum getStatic, mais sim getServer
  */
 
 export const getServerSideProps: GetServerSideProps = async ({
@@ -46,12 +47,11 @@ export const getServerSideProps: GetServerSideProps = async ({
     const session = await getSession({ req });
     // console.log('session ===>', JSON.stringify(session, null, 2));
     const { slug } = params;
-    console.log('session', session);
     //redirect em request
     if (!session?.activeSubscription) {
         return {
             redirect: {
-                destination: '/',
+                destination: `/posts/preview/${slug}`,
                 permanent: false
             }
         };
