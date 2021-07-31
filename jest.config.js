@@ -7,5 +7,11 @@ module.exports = {
     transform: {
         '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest'
     },
-    testEnvironment: 'jsdom'
+
+    testEnvironment: 'jsdom',
+
+    //ignorando arquivos css e scss module, observar como deve ser no react sem nexts
+    moduleNameMapper: {
+        '\\.(scss|css|sass)$': 'identity-obj-proxy'
+    }
 };
