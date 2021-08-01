@@ -3,6 +3,8 @@ import { mocked } from 'ts-jest/utils';
 import { useSession } from 'next-auth/client';
 import { SignInButton } from '.';
 
+jest.mock('next-auth/client');
+
 describe('SignInButton component', () => {
     test('Renders correctly when user is not authenticated', () => {
         //usando o ts-jest para conseguir atribuir diferentes retornos de valores
@@ -22,11 +24,12 @@ describe('SignInButton component', () => {
                 user: {
                     name: 'John Doe',
                     email: 'John.doe@example.com'
-                }
+                },
+                expires: 'fake-value'
             },
             false
         ]);
         render(<SignInButton />);
-        expect(screen.getAllByText('John Doe')).toBeInTheDocument();
+        expect(screen.getByText('John Doe')).toBeInTheDocument();
     });
 });
