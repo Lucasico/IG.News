@@ -20,7 +20,7 @@ jest.mock('next-auth/client', () => {
 });
 
 describe('Header component', () => {
-    test('renders correctly', () => {
+    test('renders correctly with links home and posts', () => {
         render(<Header />);
         expect(screen.getByText('Home')).toBeInTheDocument();
         expect(screen.getByText('Posts')).toBeInTheDocument();
