@@ -36,6 +36,7 @@ describe('SubscribeButton component', () => {
         const useRouterMocked = mocked(useRouter);
         const useSessionMocked = mocked(useSession);
 
+        //mock de uma função sem retorno
         const pushmock = jest.fn();
 
         useSessionMocked.mockReturnValueOnce([
