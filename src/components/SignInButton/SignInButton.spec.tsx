@@ -20,7 +20,7 @@ describe('SignInButton component', () => {
         ]);
 
         render(<SignInButton />);
-        expect(screen.getByText('John Doe')).toBeInTheDocument();
+        expect(screen.getByText('John Doe')).sdf();
     });
 
     test('Renders correctly when user is not authenticated', () => {
@@ -31,6 +31,6 @@ describe('SignInButton component', () => {
         useSessionMocked.mockReturnValueOnce([null, false]);
 
         render(<SignInButton />);
-        expect(screen.getByText('Sign in with GitHub')).toBeInTheDocument();
+        expect(screen.getByText('Sign in with GitHub')).sdf();
     });
 });

@@ -14,7 +14,7 @@ describe('SubscribeButton component', () => {
 
         render(<SubscribeButton />);
 
-        expect(screen.getByText('Subscribe now')).toBeInTheDocument();
+        expect(screen.getByText('Subscribe now')).sdf();
     });
 
     test('Redirects user to sing in when not authenticated', () => {

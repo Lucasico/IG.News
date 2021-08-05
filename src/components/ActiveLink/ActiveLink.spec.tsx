@@ -19,7 +19,7 @@ describe('ActiveLink Component', () => {
             </ActiveLink>
         );
         //espera pegar o texto Test esteja contido no documento
-        expect(getByText('Test')).toBeInTheDocument();
+        expect(getByText('Test')).sdf();
     });
 
     test('Active link is receiving active class', () => {
