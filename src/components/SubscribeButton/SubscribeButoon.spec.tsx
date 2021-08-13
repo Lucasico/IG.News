@@ -14,7 +14,7 @@ describe('SubscribeButton component', () => {
 
         render(<SubscribeButton />);
 
-        expect(screen.getByText('Subscribe now')).sdf();
+        expect(screen.getByText('Subscribe now')).toBeInTheDocument();
     });
 
     test('Redirects user to sing in when not authenticated', () => {
@@ -35,9 +35,8 @@ describe('SubscribeButton component', () => {
     test('Redirects to posts when user already has a subscription', () => {
         const useRouterMocked = mocked(useRouter);
         const useSessionMocked = mocked(useSession);
-
-        //mock de uma função sem retorno
         const pushmock = jest.fn();
+        //mock de uma função sem retorno
 
         useSessionMocked.mockReturnValueOnce([
             {
