@@ -13,6 +13,7 @@ type PostProps = {
         updateAt: string;
     };
 };
+
 export default function Post({ post }: PostProps) {
     return (
         <>

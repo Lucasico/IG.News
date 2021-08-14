@@ -21,7 +21,6 @@ export default function PostPreview({ post }: PreviewPostProps) {
     const router = useRouter();
 
     useEffect(() => {
-        console.log('chegou neste effect');
         if (session?.activeSubscription) {
             router.push(`/posts/${post.slug}`);
         }
